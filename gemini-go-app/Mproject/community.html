@@ -1,0 +1,202 @@
+<!--done-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FuSure - Community Forums</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="main-wrapper">
+    <div class="layout-container">
+        
+        <header class="navbar">
+            <div class="nav-brand">
+                <div class="logo-icon">
+                    <svg fill="currentColor" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                        <path clip-rule="evenodd" d="M24 4H42V17.3333V30.6667H24V44H6V30.6667V17.3333H24V4Z" fill="currentColor" fill-rule="evenodd"></path>
+                    </svg>
+                </div>
+               <a href="newhomePage.html"> <h2>FuSure</h2> </a>
+            </div>
+
+            <div class="nav-links-container">
+                <nav class="nav-menu">
+                    <a href="courseChoice.html">Course Guides</a>
+                    <a href="projects.html" class="active-link">Explore Mini Projects</a>
+                    <a href="community.html">Community</a>
+                </nav>
+                <div class="nav-actions">
+                    <a href="chatbot.html" class="btn btn-primary icon-btn">
+                        <span>Chat With CourseFriend 🤖</span>
+                    </a>
+                    <div class="auth-buttons">
+                        <button class="btn btn-secondary">Login</button>
+                        <button class="btn btn-primary">Sign Up</button>
+                    </div>
+                </div>
+            </div> 
+            
+            <button class="mobile-menu-btn">
+                <span class="material-symbols-outlined">menu</span>
+            </button>
+        </header>
+
+        <main class="forum-page">
+            
+            <div class="forum-header-section">
+                <div class="header-text">
+                    <h1>Community Forums</h1>
+                    <p>Ask, share, and connect with students and experts.</p>
+                </div>
+                <button class="btn btn-primary icon-btn">
+                    <span class="material-symbols-outlined">add_circle</span>
+                    <span>Create New Post</span>
+                </button>
+            </div>
+
+            <div class="forum-controls">
+                <div class="search-container">
+                    <span class="material-symbols-outlined search-icon">search</span>
+                    <input type="text" placeholder="Search topics..." class="search-input">
+                </div>
+                <div class="filter-buttons">
+                    <button class="btn btn-secondary icon-btn">
+                        <span class="material-symbols-outlined">filter_list</span>
+                        <span>Filter</span>
+                    </button>
+                    <button class="btn btn-secondary icon-btn">
+                        <span>Sort by: Latest</span>
+                        <span class="material-symbols-outlined">expand_more</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="forum-list">
+                
+                <div class="forum-card">
+                    <div class="vote-column">
+                        <button class="vote-btn">
+                            <span class="material-symbols-outlined">arrow_upward</span>
+                        </button>
+                        <span class="vote-count">28</span>
+                    </div>
+                    <div class="post-content">
+                        <div class="post-meta">
+                            Posted by <span class="user-link">math_whiz_123</span>
+                        </div>
+                        <h3 class="post-title">Is Actuarial Science really that hard? Looking for advice from seniors.</h3>
+                        <div class="tags-row">
+                            <span class="forum-tag tag-blue">#actuarial-science</span>
+                        </div>
+                        <div class="post-footer">
+                            <span class="material-symbols-outlined">forum</span>
+                            <span>12 replies</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="forum-card">
+                    <div class="vote-column">
+                        <button class="vote-btn">
+                            <span class="material-symbols-outlined">arrow_upward</span>
+                        </button>
+                        <span class="vote-count">15</span>
+                    </div>
+                    <div class="post-content">
+                        <div class="post-meta">
+                            Posted by <span class="user-link">creative_soul</span>
+                        </div>
+                        <h3 class="post-title">My portfolio for Interior Design application. Feedback wanted!</h3>
+                        <div class="tags-row">
+                            <span class="forum-tag tag-purple">#interior-design</span>
+                        </div>
+                        <div class="post-footer">
+                            <span class="material-symbols-outlined">forum</span>
+                            <span>8 replies</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="forum-card">
+                    <div class="vote-column">
+                        <button class="vote-btn">
+                            <span class="material-symbols-outlined">arrow_upward</span>
+                        </button>
+                        <span class="vote-count">42</span>
+                    </div>
+                    <div class="post-content">
+                        <div class="post-meta">
+                            Posted by <span class="user-link">future_doc</span>
+                        </div>
+                        <h3 class="post-title">Difference between Biomedical Science and Pharmacy?</h3>
+                        <div class="tags-row">
+                            <span class="forum-tag tag-green">#biomedical-science</span>
+                            <span class="forum-tag tag-teal">#pharmacy</span>
+                        </div>
+                        <div class="post-footer">
+                            <span class="material-symbols-outlined">forum</span>
+                            <span>25 replies</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="forum-card">
+                    <div class="vote-column">
+                        <button class="vote-btn">
+                            <span class="material-symbols-outlined">arrow_upward</span>
+                        </button>
+                        <span class="vote-count">7</span>
+                    </div>
+                    <div class="post-content">
+                        <div class="post-meta">
+                            Posted by <span class="user-link">code_ninja</span>
+                        </div>
+                        <h3 class="post-title">Computer Science: University ranking vs. project portfolio?</h3>
+                        <div class="tags-row">
+                            <span class="forum-tag tag-red">#computer-science</span>
+                        </div>
+                        <div class="post-footer">
+                            <span class="material-symbols-outlined">forum</span>
+                            <span>19 replies</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </main>
+
+        <footer class="main-footer">
+            <div class="footer-content">
+                <div class="nav-brand">
+                    <div class="logo-icon">
+                        <svg fill="currentColor" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                            <path clip-rule="evenodd" d="M24 4H42V17.3333V30.6667H24V44H6V30.6667V17.3333H24V4Z" fill="currentColor" fill-rule="evenodd"></path>
+                        </svg>
+                    </div>
+                    <span class="brand-name">FuSure</span>
+                </div>
+                <div class="footer-links">
+                    <a href="#">About Us</a>
+                    <a href="#">Contact</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Privacy Policy</a>
+                </div>
+                <p class="copyright">© 2024 FuSure. All Rights Reserved.</p>
+            </div>
+        </footer>
+
+    </div>
+</div>
+
+</body>
+</html>

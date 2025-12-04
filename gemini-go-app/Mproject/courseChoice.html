@@ -1,0 +1,355 @@
+
+<!--Done-->
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>FuSure - Explore Courses</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
+    }
+    .material-symbols-outlined.fill {
+      font-variation-settings: 'FILL' 1;
+    }
+    .material-symbols-outlined.sm {
+      font-size: 20px;
+    }
+  </style>
+<script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#2547f4",
+            "background-light": "#f5f6f8",
+            "background-dark": "#101322",
+            "text-primary": "#212529", 
+            "text-secondary": "#6C757D", 
+            "card-light": "#FFFFFF",
+            "card-dark": "#181d34", 
+            "border-dark": "#222949",
+            "interactive-light": "#eef2ff",
+            "interactive-dark": "#181d34",
+            "orange": "#F5A623", 
+            "teal": "#50E3C2", 
+            "blue-skill": "#3B82F6",
+          },
+          fontFamily: {
+            "display": ["Space Grotesk", "sans-serif"]
+          },
+          borderRadius: {
+            "DEFAULT": "1rem",
+            "lg": "2rem",
+            "xl": "3rem",
+            "full": "9999px"
+          },
+        },
+      },
+    }
+  </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-text-primary dark:text-card-light">
+<div class="relative flex min-h-screen w-full flex-col">
+
+    <header class="fixed top-0 z-50 w-full border-b border-solid border-white/10 dark:border-[#222949] bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm">
+        <div class="flex items-center justify-between whitespace-nowrap w-full max-w-[1280px] mx-auto px-4 sm:px-8 lg:px-16 py-3">
+            <div class="flex items-center gap-4 text-black dark:text-white flex-shrink-0">
+                <div class="size-6 text-primary flex items-center justify-center">
+                    <span class="material-symbols-outlined text-xl">auto_stories</span>
+                </div>
+                <a href="newhomePage.html" ><h2 class="text-black dark:text-white text-lg font-bold leading-tight tracking-[-0.015em]">FuSure</h2> </a>
+            </div>
+            
+            <!--top nav bar-->
+      <div class="hidden lg:flex items-center ml-auto">
+
+        <nav class="flex items-center gap-6">
+
+          <div class="relative" id="course-guides-dropdown">
+            <button class="flex items-center text-black dark:text-white text-sm font-medium leading-normal hover:text-primary dark:hover:text-primary focus:outline-none" aria-expanded="false" aria-controls="dropdown-menu-courses">
+              Course Guides
+              <span class="material-symbols-outlined text-base ml-1 transition-transform" id="dropdown-icon">expand_more</span>
+            </button>
+            <!-- Updated dropdown menu with bigger background -->
+            <div id="dropdown-menu-courses" class="absolute left-1/2 transform -translate-x-1/2 mt-2 w-60 rounded-xl shadow-lg bg-card-light dark:bg-card-dark ring-1 ring-black/10 dark:ring-white/10 z-50 hidden">
+              <div class="py-3"> <!-- increased vertical padding -->
+                <a href="courseChoice.html" class="block px-4 py-3 text-sm text-black dark:text-white hover:bg-background-light dark:hover:bg-[#222949] rounded-xl mx-2 transition-colors">
+                  <span class="material-symbols-outlined text-sm align-middle mr-2">search</span>Explore Courses
+                </a>
+               
+                <a href="compareCourse.html" class="block px-4 py-3 text-sm text-black dark:text-white hover:bg-background-light dark:hover:bg-[#222949] rounded-xl mx-2 transition-colors">
+                  <span class="material-symbols-outlined text-sm align-middle mr-2">compare_arrows</span>Compare Courses
+                </a>
+              </div>
+            </div>
+          </div>
+          <a class="text-black dark:text-white text-sm font-medium leading-normal hover:text-primary dark:hover:text-primary" href="projects.html">Explore Mini Projects</a>
+          <a class="text-black dark:text-white text-sm font-medium leading-normal hover:text-primary dark:hover:text-primary" href="community.html">Community</a>
+        </nav>
+
+        <a class="flex items-center justify-center gap-2 text-white font-bold text-sm leading-normal bg-primary rounded-full h-9 px-4 hover:opacity-90 flex-shrink-0 ml-6" href="chatbot.html">
+          <span class="truncate">Chat with AICourseBuddy 🤖</span>
+        </a>
+      </div>
+            <div class="flex items-center gap-2 flex-shrink-0 ml-6">
+                <button class="hidden sm:flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-9 px-4 bg-white/10 dark:bg-[#222949] text-black dark:text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-white/20 dark:hover:bg-[#313a68]">
+                    <span class="truncate">Login</span>
+                </button>
+                <button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-9 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] hover:opacity-90 flex-shrink-0">
+                    <span class="truncate">Sign Up</span>
+                </button>
+                <button class="lg:hidden flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 bg-white/10 dark:bg-[#222949] text-black dark:text-white gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5">
+                    <span class="material-symbols-outlined text-base">menu</span>
+                </button>
+            </div>
+        </div>
+    </header>
+    <div class="flex w-full grow pt-[4.5rem]"> 
+    
+        <aside class="sticky top-[4.5rem] flex h-[calc(100vh-4.5rem)] w-80 flex-shrink-0 flex-col border-r border-black/10 dark:border-border-dark bg-card-light dark:bg-card-dark p-6">
+            
+            <div class="mb-6">
+                <label class="flex flex-col min-w-40 h-10 w-full">
+                    <div class="flex w-full flex-1 items-stretch rounded-full h-full border border-black/10 dark:border-border-dark bg-background-light dark:bg-background-dark">
+                        <div class="text-zinc-500 dark:text-card-light/70 flex items-center justify-center pl-4">
+                            <span class="material-symbols-outlined text-lg">search</span>
+                        </div>
+                        <input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-r-full text-black dark:text-card-light focus:outline-0 focus:ring-0 border-none bg-transparent h-full placeholder:text-zinc-500 dark:placeholder:text-card-light/70 pl-2 text-sm" placeholder="Search for courses..." value=""/>
+                    </div>
+                </label>
+            </div>
+
+            <div class="flex flex-1 flex-col gap-3 overflow-y-auto">
+                <details class="flex flex-col rounded-xl border border-black/10 dark:border-border-dark bg-card-light dark:bg-[#181d34] px-4 py-1 group shadow-sm" open="">
+                    <summary class="flex cursor-pointer list-none items-center justify-between gap-6 py-2">
+                        <p class="text-black dark:text-card-light text-base font-bold">Field of Study</p>
+                        <span class="material-symbols-outlined text-primary group-open:rotate-180 transition-transform sm">expand_more</span>
+                    </summary>
+                    <div class="flex flex-col gap-3 pb-3 pt-2">
+                        <label class="flex items-center gap-3 cursor-pointer"><input checked="" class="form-checkbox rounded-md bg-transparent border-zinc-300 dark:border-zinc-700 text-primary focus:ring-primary/50" type="checkbox"/><span class="text-sm text-zinc-600 dark:text-card-light/80">STEM</span></label>
+                        <label class="flex items-center gap-3 cursor-pointer"><input class="form-checkbox rounded-md bg-transparent border-zinc-300 dark:border-zinc-700 text-primary focus:ring-primary/50" type="checkbox"/><span class="text-sm text-zinc-600 dark:text-card-light/80">Arts & Humanities</span></label>
+                        <label class="flex items-center gap-3 cursor-pointer"><input checked="" class="form-checkbox rounded-md bg-transparent border-zinc-300 dark:border-zinc-700 text-primary focus:ring-primary/50" type="checkbox"/><span class="text-sm text-zinc-600 dark:text-card-light/80">Business</span></label>
+                        <label class="flex items-center gap-3 cursor-pointer"><input class="form-checkbox rounded-md bg-transparent border-zinc-300 dark:border-zinc-700 text-primary focus:ring-primary/50" type="checkbox"/><span class="text-sm text-zinc-600 dark:text-card-light/80">Health Sciences</span></label>
+                    </div>
+                </details>
+                <details class="flex flex-col rounded-xl border border-black/10 dark:border-border-dark bg-card-light dark:bg-[#181d34] px-4 py-1 group shadow-sm">
+                    <summary class="flex cursor-pointer list-none items-center justify-between gap-6 py-2">
+                        <p class="text-black dark:text-card-light text-base font-bold">Duration</p>
+                        <span class="material-symbols-outlined text-primary group-open:rotate-180 transition-transform sm">expand_more</span>
+                    </summary>
+                    <div class="flex flex-col gap-3 pb-3 pt-2">
+                        <label class="flex items-center gap-3 cursor-pointer"><input class="form-checkbox rounded-md bg-transparent border-zinc-300 dark:border-zinc-700 text-primary focus:ring-primary/50" type="checkbox"/><span class="text-sm text-zinc-600 dark:text-card-light/80">3 Years (Bachelors)</span></label>
+                        <label class="flex items-center gap-3 cursor-pointer"><input class="form-checkbox rounded-md bg-transparent border-zinc-300 dark:border-zinc-700 text-primary focus:ring-primary/50" type="checkbox"/><span class="text-sm text-zinc-600 dark:text-card-light/80">4 Years (Hons/Professional)</span></label>
+                    </div>
+                </details>
+                <details class="flex flex-col rounded-xl border border-black/10 dark:border-border-dark bg-card-light dark:bg-[#181d34] px-4 py-1 group shadow-sm">
+                    <summary class="flex cursor-pointer list-none items-center justify-between gap-6 py-2">
+                        <p class="text-black dark:text-card-light text-base font-bold">Tags</p>
+                        <span class="material-symbols-outlined text-primary group-open:rotate-180 transition-transform sm">expand_more</span>
+                    </summary>
+                    <div class="flex flex-col gap-3 pb-3 pt-2">
+                        <p class="text-sm text-zinc-600 dark:text-card-light/80">Filter tags will appear here.</p>
+                    </div>
+                </details>
+            </div>
+            
+            <div class="flex flex-col gap-3 pt-6 border-t border-black/10 dark:border-border-dark">
+                <button class="flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-full h-11 px-4 bg-primary text-white text-sm font-bold hover:opacity-90">
+                    <span>Apply Filters</span>
+                </button>
+                <button class="flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-full h-11 px-4 bg-white/10 dark:bg-[#222949] text-black dark:text-white text-sm font-bold hover:bg-white/20 dark:hover:bg-[#313a68]">
+                    <span>Reset</span>
+                </button>
+            </div>
+        </aside>
+
+        <main class="flex-1 p-8">
+            <div class="mx-auto max-w-7xl">
+                
+                <div class="mb-6">
+                    <p class="text-black dark:text-white text-4xl font-black tracking-tighter">Explore Degree Courses</p>
+                    <p class="text-zinc-600 dark:text-white/80 text-base mt-2">Discover university degrees and interactive mini-projects to find your passion.</p>
+                </div>
+
+                <div class="flex items-center justify-between mb-6">
+                    <p class="text-zinc-600 dark:text-white/80 text-sm font-medium">Showing <span class="font-bold text-black dark:text-white">128</span> Courses</p>
+                    <div class="flex items-center gap-2">
+                        <span class="text-sm text-zinc-600 dark:text-white/80">Sort by:</span>
+                        <select class="form-select text-sm font-medium bg-card-light dark:bg-card-dark border-black/10 dark:border-border-dark rounded-full py-2 pl-3 pr-8 focus:ring-2 focus:ring-primary/50 focus:border-primary text-black dark:text-white">
+                            <option>Popularity</option>
+                            <option>Newest</option>
+                            <option>Alphabetical</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+                    
+                    <!--degree course box-->
+                    <div class="group flex cursor-pointer flex-col overflow-hidden rounded-xl bg-card-light dark:bg-card-dark shadow-sm border border-black/10 dark:border-border-dark transition-all hover:shadow-lg hover:-translate-y-1">
+                        <div class="relative">
+                            <div class="aspect-video w-full bg-cover bg-center" data-alt="Illustration of a robot arm building something with blocks" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCFovzutNEhe-KSZB5B1yf1LOUxMZGmiSagJv9srlx8LWKjdgOznn5GiD8GQvEd044qqft6CYcbQDSah-SMJ8SqSC6U-Fvj_h7GDkKTGblZPsiPM18LQBuGxvP_iXTjuzysw_BAZ_lnqIoulcCh4p7B5NdV_wawYtJvo0qLQ9zK_ktEQAHbi98ibRwQm1RVnJOJh_uTCBkwNSUd2qyjgkZD7cbF8dCJptoXvtuEF5CWulmGyDM4X7lELH6lWGh9RLKW1H-nI2h5')"></div>
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                            <div class="absolute bottom-3 left-3 flex gap-2">
+                                <div class="flex items-center gap-1.5 rounded-full bg-teal/20 backdrop-blur-sm px-2 py-1 text-xs font-bold text-teal"><span class="material-symbols-outlined sm !text-base">auto_awesome</span>Innovation</div>
+                            </div>
+                        </div>
+                        <div class="flex flex-col p-4">
+                            <h3 class="text-lg font-bold text-black dark:text-white">Bachelor of AI Degree Course</h3>
+                            <p class="text-sm text-zinc-600 dark:text-white/80 flex-1 mt-2">Learn to build intelligent systems and shape the future of technology.</p>
+                        </div>
+                    </div>
+
+                    <a href="courseinformation.html">
+                    <div class="group flex cursor-pointer flex-col overflow-hidden rounded-xl bg-card-light dark:bg-card-dark shadow-sm border border-black/10 dark:border-border-dark transition-all hover:shadow-lg hover:-translate-y-1">
+                        <div class="relative">
+                            <div class="aspect-video w-full bg-cover bg-center" data-alt="Illustration of a robot arm building something with blocks" style="background-image: url('Image/CS.jpg')"></div>
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                            <div class="absolute bottom-3 left-3 flex gap-2">
+                                <div class="flex items-center gap-1.5 rounded-full bg-teal/20 backdrop-blur-sm px-2 py-1 text-xs font-bold text-teal"><span class="material-symbols-outlined sm !text-base">auto_awesome</span>STEM Field</div>
+                            </div>
+                        </div>
+                        <div class="flex flex-col p-4">
+                            <h3 class="text-lg font-bold text-black dark:text-white">Bachelor of Computer Scince</h3>
+                            <p class="text-sm text-zinc-600 dark:text-white/80 flex-1 mt-2">Acquire knowledge in software development, data analysis, and emerging technologies to drive innovation.</p>
+                        </div>
+                    </div> </a>
+
+                    <div class="group flex cursor-pointer flex-col overflow-hidden rounded-xl bg-card-light dark:bg-card-dark shadow-sm border border-black/10 dark:border-border-dark transition-all hover:shadow-lg hover:-translate-y-1">
+                        <div class="relative">
+                            <div class="aspect-video w-full bg-cover bg-center" data-alt="Abstract illustration representing human thought and emotion" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA1Y_wiN29oLxU8jKL82lBjC4c8Zm1n6r0evPil0OZcSdIO0jYgm3NKasbGY-eJDH2K-rikondIeFS7HYxfrpbT2SdAV9SfOqtckuIv5sKqg3-xT3uW69RgZ_g7B-xXyL-GwQGg8onKHak_BBwaGP_905R14tPMDFYjp5lHeDthlRFxFpO8rDlC3r22SaPfWhFJkEkZu_QqnygI4CVTp1iaasUwxE89vK5lN4BJfUmMjJBNeBeHkL8oXaw2Hv9N-SdoFcggmrCw')"></div>
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                            <div class="absolute bottom-3 left-3 flex gap-2">
+                                <div class="flex items-center gap-1.5 rounded-full bg-orange/20 backdrop-blur-sm px-2 py-1 text-xs font-bold text-orange"><span class="material-symbols-outlined sm !text-base">psychology</span>Social Science</div>
+                            </div>
+                        </div>
+                        <div class="flex flex-col p-4">
+                            <h3 class="text-lg font-bold text-black dark:text-white">BSc Psychology Degree Course</h3>
+                            <p class="text-sm text-zinc-600 dark:text-white/80 flex-1 mt-2">Explore the fascinating inner workings of the human mind and behavior.</p>
+                        </div>
+                    </div>
+
+                    <div class="group flex cursor-pointer flex-col overflow-hidden rounded-xl bg-card-light dark:bg-card-dark shadow-sm border border-black/10 dark:border-border-dark transition-all hover:shadow-lg hover:-translate-y-1">
+                        <div class="relative">
+                            <div class="aspect-video w-full bg-cover bg-center" data-alt="Colorful geometric shapes and patterns" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDrC9JfXIG8EMAs7VWFoViag3wdgNUbwNIV8RBIoVmZQJPbiHXFT4autVCrNn4YlitXRDHc_-cnrD0Ws22I-jFy7-TkCJqymhBK4mdSPzLPabMkMC5VRIdsYDYIeix2vUhVMVkFTNHrRbxf69i3NqxLZe82AToHUbfnrZ_3O5dJQRY4qmWM_vFj1kSd2VVkSveiZQ0HB8pAV77Jf98Fab-lw_TXgidYvhv1RLaDtrBNNMg7TvGytAq30kbNrmoG6zhBrq2ldYuE')"></div>
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                            <div class="absolute bottom-3 left-3 flex gap-2">
+                                <div class="flex items-center gap-1.5 rounded-full bg-orange/20 backdrop-blur-sm px-2 py-1 text-xs font-bold text-orange"><span class="material-symbols-outlined sm !text-base">draw</span>Creative Arts</div>
+                                <div class="flex items-center gap-1.5 rounded-full bg-teal/20 backdrop-blur-sm px-2 py-1 text-xs font-bold text-teal"><span class="material-symbols-outlined sm !text-base">devices</span>Digital Tools</div>
+                            </div>
+                        </div>
+                        <div class="flex flex-col p-4">
+                            <h3 class="text-lg font-bold text-black dark:text-white">Bachelor of Digital Graphic Design</h3>
+                            <p class="text-sm text-zinc-600 dark:text-white/80 flex-1 mt-2">Bring your creative visions to life with industry-standard digital tools.</p>
+                        </div>
+                    </div>
+
+                    <div class="group flex cursor-pointer flex-col overflow-hidden rounded-xl bg-card-light dark:bg-card-dark shadow-sm border border-black/10 dark:border-border-dark transition-all hover:shadow-lg hover:-translate-y-1">
+                        <div class="relative">
+                            <div class="aspect-video w-full bg-cover bg-center" data-alt="A modern office building with a sky background" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCM0YWTllPOBf8gDu6XMzB3iNX1vE7JlWVzc7FGovbq65n8tznSEq1R5bG8FtOWaoEBp-J6alXwiHdy7ApwN_cQAJwSNxCsKEBvmLy6rCQXE1I_fzdcxgKSqAwKj7Gs5I8PLF8C0CyltRvRgHBhHhcjOyOkGWvr1NBt9D31yboxxseEPxlSNv0hCqZ5f5LxmZkwGeE-pymzUd1sjLVfO9YfEFLiN-G9I8AM3OhnfahR-uOOlNVDT6MtusiJhY4l9gbXO63lnUsp')"></div>
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                            <div class="absolute bottom-3 left-3 flex gap-2">
+                                <div class="flex items-center gap-1.5 rounded-full bg-blue-500/20 backdrop-blur-sm px-2 py-1 text-xs font-bold text-blue-skill"><span class="material-symbols-outlined sm !text-base">work</span>Business & Mgmt</div>
+                            </div>
+                        </div>
+                        <div class="flex flex-col p-4">
+                            <h3 class="text-lg font-bold text-black dark:text-white">Bachelor of Entrepreneurship Degree</h3>
+                            <p class="text-sm text-zinc-600 dark:text-white/80 flex-1 mt-2">Learn the fundamentals of building and launching a successful business.</p>
+                        </div>
+                    </div>
+
+                    <div class="group flex cursor-pointer flex-col overflow-hidden rounded-xl bg-card-light dark:bg-card-dark shadow-sm border border-black/10 dark:border-border-dark transition-all hover:shadow-lg hover:-translate-y-1">
+                        <div class="relative">
+                            <div class="aspect-video w-full bg-cover bg-center" data-alt="A vibrant coral reef teeming with fish" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBGbq-769mLnXYAH8P_rjGbOWf1BsVmgPzq0iMkrKElynZvAt3QSi0_zY6bA5hDvoVsYkQLYKCBYFXqgsTHRFDQOi2ETKqs0z8GiMBracetD5Po6HAvCD29fj4b_fZfQT4goa_HRAk2FmPZ7w28DbOTzEtZlR3ATHKG-u2JnoeoBRbWZDPb4f2Fc3G8gZ09l_eZD7E3sApmfwn66uFys0ZhEn8ieREuAXoc6T_61R5IjTpKWJjCrc3ICQdNogTZTXQVUAS_0u5z')"></div>
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                            <div class="absolute bottom-3 left-3 flex gap-2">
+                                <div class="flex items-center gap-1.5 rounded-full bg-teal/20 backdrop-blur-sm px-2 py-1 text-xs font-bold text-teal"><span class="material-symbols-outlined sm !text-base">science</span>STEM Field</div>
+                            </div>
+                        </div>
+                        <div class="flex flex-col p-4">
+                            <h3 class="text-lg font-bold text-black dark:text-white">BSc Marine Biology Degree</h3>
+                            <p class="text-sm text-zinc-600 dark:text-white/80 flex-1 mt-2">Dive deep into the study of ocean life and aquatic ecosystems.</p>
+                        </div>
+                    </div>
+
+                    <div class="group flex cursor-pointer flex-col overflow-hidden rounded-xl bg-card-light dark:bg-card-dark shadow-sm border border-black/10 dark:border-border-dark transition-all hover:shadow-lg hover:-translate-y-1">
+                        <div class="relative">
+                            <div class="aspect-video w-full bg-cover bg-center" data-alt="A colorful nebula in outer space with stars" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCCt0ptB_tTV-MjGYp1jrxGR0CICR_fpwodPKRaIAh_GzL5EzoM2ozqOp4_hB9JE2jQ4yzPlxce1oGxbk1y0wI13jmfggq1f_QinkPrnTYyFRbhDkbhE2CRmT2Z_GJsIqtbIWNw--H70Q-Kisix6IB37e_RJR_OiiifhqIx2QNwSxXljnelvzSGiQR859mKcoh5FGhBwME2-EkqflKmUqw3QUWNniLIQ8UJ5efAQP0qUG31Ix5AWI0_xKaDJ5B2MBZl77t-Mqmh')"></div>
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                            <div class="absolute bottom-3 left-3 flex gap-2">
+                                <div class="flex items-center gap-1.5 rounded-full bg-teal/20 backdrop-blur-sm px-2 py-1 text-xs font-bold text-teal"><span class="material-symbols-outlined sm !text-base">rocket_launch</span>Physical Science</div>
+                            </div>
+                        </div>
+                        <div class="flex flex-col p-4">
+                            <h3 class="text-lg font-bold text-black dark:text-white">BSc Astrophysics Degree Course</h3>
+                            <p class="text-sm text-zinc-600 dark:text-white/80 flex-1 mt-2">Uncover the mysteries of the universe, from stars to galaxies.</p>
+                        </div>
+                    </div>
+
+                    <div class="group flex cursor-pointer flex-col overflow-hidden rounded-xl bg-card-light dark:bg-card-dark shadow-sm border border-black/10 dark:border-border-dark transition-all hover:shadow-lg hover:-translate-y-1">
+                        <div class="relative">
+                            <div class="aspect-video w-full bg-cover bg-center" data-alt="A chef meticulously plating a gourmet dish" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDhomwiPy8f7StcyKpoIfTPTQX63jc7AT9YvK0__q7hEUS10MFhRL7LCh8nmmW7pcSTTQp_VrLdFfLZTzb9ignYWh4WF6OQZ8E0PL0vrxXFKguvs8owl1y9FBHIKMA6syZN5WQkLOGHXd6MMyeXVV81ItVEjSoolCcaACVSrEfeMFkMEip3O8zqn2fgD8qu-cxJNoqrXPvUVqJn3CwGlPBdicPgocWq-qlsJDkVPGISred-69zpUc1wD1Y1eeX5Y4Rwo-hbg-5-')"></div>
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                            <div class="absolute bottom-3 left-3 flex gap-2">
+                                <div class="flex items-center gap-1.5 rounded-full bg-orange/20 backdrop-blur-sm px-2 py-1 text-xs font-bold text-orange"><span class="material-symbols-outlined sm !text-base">restaurant</span>Practical Skill</div>
+                            </div>
+                        </div>
+                        <div class="flex flex-col p-4">
+                            <h3 class="text-lg font-bold text-black dark:text-white">Bachelor of Culinary Arts Degree</h3>
+                            <p class="text-sm text-zinc-600 dark:text-white/80 flex-1 mt-2">Master the art and science of cooking with hands-on training.</p>
+                        </div>
+                    </div>
+
+                    <div class="group flex cursor-pointer flex-col overflow-hidden rounded-xl bg-card-light dark:bg-card-dark shadow-sm border border-black/10 dark:border-border-dark transition-all hover:shadow-lg hover:-translate-y-1">
+                        <div class="relative">
+                            <div class="aspect-video w-full bg-cover bg-center" data-alt="A sketch of a modern building next to a scale model" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDJ4j_JQNiobTV8uRHEXldGGp5kaMFYZlZNZsakQ1XTgVxbciJfDRZImlhPSl-S32p-hhWivAMFpE-IxeXAPG2J6rwm2a4gEbmTFrP1ORiUZd9cqtqOQm5tCfpDoPam-XfwRgDzuwvluiagidUEWa7a7pv9im4ie1DYsY7J-BySs9RvIYhQrtqyz-JvLCNMygvCCFqn_7tJtMCZDS84rRhl6502Lrr59q_V2yFjfnZe0NgUiIqDmxttKHR0TPVaJ6qBxHm8Nq2V')"></div>
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                            <div class="absolute bottom-3 left-3 flex gap-2">
+                                <div class="flex items-center gap-1.5 rounded-full bg-blue-500/20 backdrop-blur-sm px-2 py-1 text-xs font-bold text-blue-skill"><span class="material-symbols-outlined sm !text-base">architecture</span>Design & Eng</div>
+                            </div>
+                        </div>
+                        <div class="flex flex-col p-4">
+                            <h3 class="text-lg font-bold text-black dark:text-white">Bachelor of Architectural Design</h3>
+                            <p class="text-sm text-zinc-600 dark:text-white/80 flex-1 mt-2">Design the buildings of tomorrow by blending art and engineering.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <footer class="mt-10 border-t border-solid border-white/10 dark:border-[#222949] px-4 sm:px-10 py-8 text-zinc-500 dark:text-gray-400 text-sm">
+        <div class="flex flex-col md:flex-row justify-between items-center gap-6 max-w-[1280px] mx-auto">
+            <div class="flex items-center gap-2">
+                <div class="size-5 text-primary flex items-center justify-center">
+                    <span class="material-symbols-outlined text-base">auto_stories</span>
+                </div>
+                <span class="font-bold text-base text-black dark:text-white">FuSure</span>
+            </div>
+            <div class="flex flex-wrap justify-center gap-x-6 gap-y-2">
+                <a class="hover:text-primary" href="#">About Us</a>
+                <a class="hover:text-primary" href="#">Contact</a>
+                <a class="hover:text-primary" href="#">Terms of Service</a>
+                <a class="hover:text-primary" href="#">Privacy Policy</a>
+            </div>
+            <p class="text-sm">© 2025 FuSure. All Rights Reserved.</p>
+        </div>
+    </footer>
+    </div>
+    <script src="dropdown.js"></script>
+
+</body>
+</html>
