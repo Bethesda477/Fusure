@@ -146,10 +146,10 @@ func serveStaticFiles(w http.ResponseWriter, r *http.Request) {
 	// **** CHANGE: Point the directory to the parent Mproject folder ****
 	const baseDir = "Mproject"
 
-	// If the request path is the root '/', serve the newhomePage.html
+	// If the request path is the root '/', serve the index.html
 	if r.URL.Path == "/" {
 		// IMPORTANT: Access the file within the 'Mproject' directory.
-		http.ServeFile(w, r, filepath.Join(baseDir, "newhomePage.html"))
+		http.ServeFile(w, r, filepath.Join(baseDir, "index.html"))
 		return
 	}
 

@@ -1,0 +1,385 @@
+<!--Done -->
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Course Details - FuSure</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
+    }
+  </style>
+<script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            /* 3. COLOR PALETTE COPIED FROM VERSION 1 */
+            "primary": "#2547f4", // Main brand blue
+            "background-light": "#f5f6f8", // Light background
+            "background-dark": "#101322", // Dark background
+            // Version 2's specific colors, adjusted for the new theme look:
+            "text-primary": "#212529", 
+            "text-secondary": "#6C757D", 
+            "card-light": "#FFFFFF",
+            "card-dark": "#181d34", // Adjusted to match V1's dark card/border shade
+            "accent-yellow": "#FFD166",
+            "accent-blue": "#83D1F5",
+          },
+          fontFamily: {
+            "display": ["Space Grotesk", "sans-serif"] // Font changed to Space Grotesk
+          },
+          borderRadius: {
+            "DEFAULT": "1rem", // Border radius changed to V1's default
+            "lg": "2rem", // Border radius changed to V1's lg
+            "xl": "3rem", // Border radius changed to V1's xl
+            "full": "9999px"
+          },
+        },
+      },
+    }
+  </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-text-primary dark:text-gray-200">
+<div class="relative flex min-h-screen w-full flex-col group/design-root">
+
+<header class="sticky top-0 z-50 w-full border-b border-solid border-white/10 dark:border-[#222949] bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm">
+    
+    <div class="flex items-center justify-between whitespace-nowrap w-full max-w-[1280px] mx-auto px-4 sm:px-8 lg:px-16 py-3">
+        
+      <div class="flex items-center gap-4 text-black dark:text-white flex-shrink-0">
+        <div class="size-6 text-primary flex items-center justify-center">
+            <span class="material-symbols-outlined text-xl">auto_stories</span>
+        </div>
+        <a href="newhomePage.html" ><h2 class="text-black dark:text-white text-lg font-bold leading-tight tracking-[-0.015em]">FuSure</h2> </a>
+    </div>
+        
+           <!--top nav bar-->
+      <div class="hidden lg:flex items-center ml-auto">
+
+        <nav class="flex items-center gap-6">
+
+          <div class="relative" id="course-guides-dropdown">
+            <button class="flex items-center text-black dark:text-white text-sm font-medium leading-normal hover:text-primary dark:hover:text-primary focus:outline-none" aria-expanded="false" aria-controls="dropdown-menu-courses">
+              Course Guides
+              <span class="material-symbols-outlined text-base ml-1 transition-transform" id="dropdown-icon">expand_more</span>
+            </button>
+            <!-- Updated dropdown menu with bigger background -->
+            <div id="dropdown-menu-courses" class="absolute left-1/2 transform -translate-x-1/2 mt-2 w-60 rounded-xl shadow-lg bg-card-light dark:bg-card-dark ring-1 ring-black/10 dark:ring-white/10 z-50 hidden">
+              <div class="py-3"> <!-- increased vertical padding -->
+                <a href="courseChoice.html" class="block px-4 py-3 text-sm text-black dark:text-white hover:bg-background-light dark:hover:bg-[#222949] rounded-xl mx-2 transition-colors">
+                  <span class="material-symbols-outlined text-sm align-middle mr-2">search</span>Explore Courses
+                </a>
+               
+                <a href="compareCourse.html" class="block px-4 py-3 text-sm text-black dark:text-white hover:bg-background-light dark:hover:bg-[#222949] rounded-xl mx-2 transition-colors">
+                  <span class="material-symbols-outlined text-sm align-middle mr-2">compare_arrows</span>Compare Courses
+                </a>
+              </div>
+            </div>
+          </div>
+          <a class="text-black dark:text-white text-sm font-medium leading-normal hover:text-primary dark:hover:text-primary" href="projects.html">Explore Mini Projects</a>
+          <a class="text-black dark:text-white text-sm font-medium leading-normal hover:text-primary dark:hover:text-primary" href="community.html">Community</a>
+        </nav>
+
+        <a class="flex items-center justify-center gap-2 text-white font-bold text-sm leading-normal bg-primary rounded-full h-9 px-4 hover:opacity-90 flex-shrink-0 ml-6" href="chatbot.html">
+          <span class="truncate">Chat with AICourseBuddy 🤖</span>
+        </a>
+      </div>
+
+        <div class="flex items-center gap-2 flex-shrink-0 ml-6">
+            <button class="hidden sm:flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-9 px-4 bg-white/10 dark:bg-[#222949] text-black dark:text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-white/20 dark:hover:bg-[#313a68]">
+                <span class="truncate">Login</span>
+            </button>
+            <button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-9 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] hover:opacity-90 flex-shrink-0">
+                <span class="truncate">Sign Up</span>
+            </button>
+            <button class="lg:hidden flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 bg-white/10 dark:bg-[#222949] text-black dark:text-white gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5">
+                <span class="material-symbols-outlined text-base">menu</span>
+            </button>
+        </div>
+        </div>
+</header>
+<main class="w-full max-w-6xl mx-auto px-4 py-8 md:py-12">
+<div class="w-full @container">
+<div class="bg-cover bg-center flex flex-col justify-end overflow-hidden rounded-xl min-h-[280px] md:min-h-[350px]" data-alt="Students collaborating on a computer science project" style='background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 40%), url("Image/CS.jpg");'>
+<div class="flex p-6 md:p-8"><h1 class="text-white text-[32px] md:text-4xl font-bold tracking-tight">Bachelor of Computer Science (BCompSc)</h1></div>
+</div>
+</div>
+<div class="flex gap-3 p-3 flex-wrap -mt-5 relative z-10 px-2 md:px-4">
+<div class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-card-light dark:bg-card-dark shadow-md px-4">
+<p class="text-text-primary dark:text-gray-200 text-sm font-medium">3 Years Full-Time</p>
+</div>
+<div class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-card-light dark:bg-card-dark shadow-md px-4">
+<p class="text-text-primary dark:text-gray-200 text-sm font-medium">Focus: Software & Algorithms</p>
+</div>
+</div>
+<div class="flex flex-col lg:flex-row gap-8 lg:gap-12 mt-8">
+<div class="flex-grow">
+<div class="flex flex-col gap-8">
+<div class="bg-card-light dark:bg-card-dark p-6 rounded-xl shadow-sm">
+<h2 class="text-text-primary dark:text-white text-[22px] font-bold tracking-tight mb-4">About the Course: The Architect of the Digital World </h2>
+<p class="text-text-secondary dark:text-gray-300 leading-relaxed mb-4">The <b>Bachelor of Computer Science (BCompSc)</b> is a rigorous degree focused on the theoretical foundations of computation and the practical techniques used to design, implement, and manage software and hardware systems. This course moves beyond simply 'coding'—it trains you to think like an engineer and a scientist, applying logical reasoning and mathematical principles to solve complex problems.</p>
+<p class="text-text-secondary dark:text-gray-300 leading-relaxed">You will gain an in-depth understanding of algorithms, data structures, and the principles behind modern operating systems, networks, and databases. It's the ideal path for students who want to be the <b>innovators and architects</b> behind the next generation of technology, from <b>AI systems and complex software applications to secure cloud infrastructure.</b></p>
+</div>
+<div class="bg-card-light dark:bg-card-dark p-6 rounded-xl shadow-sm">
+<h2 class="text-text-primary dark:text-white text-[22px] font-bold tracking-tight mb-4">Core Modules & Specialisations </h2>
+<p class="text-text-secondary dark:text-gray-300 leading-relaxed mb-4">The curriculum is structured across fundamental core units and optional specialisation streams, allowing you to tailor your degree to emerging tech fields.</p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <div>
+        <h3 class="font-bold text-text-primary dark:text-white mb-2 flex items-center gap-2">
+            <span class="material-symbols-outlined text-primary text-xl">school</span> Core Foundations
+        </h3>
+        <ul class="list-disc list-inside text-text-secondary dark:text-gray-300 ml-4 space-y-1 text-sm">
+            <li><b>Programming Paradigms:</b> Mastering languages like Python, Java, and C++.</li>
+            <li><b>Algorithm Design & Analysis:</b> Understanding efficiency and complexity of solutions.</li>
+            <li><b>Discrete Mathematics:</b> The logical bedrock of computer science.</li>
+            <li><b>Operating Systems:</b> How software interacts with hardware resources.</li>
+        </ul>
+    </div>
+    <div>
+        <h3 class="font-bold text-text-primary dark:text-white mb-2 flex items-center gap-2">
+            <span class="material-symbols-outlined text-accent-yellow text-xl">rocket_launch</span> Popular Specialisations
+        </h3>
+        <ul class="list-disc list-inside text-text-secondary dark:text-gray-300 ml-4 space-y-1 text-sm">
+            <li><b>Artificial Intelligence:</b> Machine Learning, Neural Networks, Data Mining.</li>
+            <li><b>Cybersecurity:</b> Cryptography, Network Security, Ethical Hacking.</li>
+            <li><b>Software Engineering:</b> Large-scale project management, Dev-Ops, Testing.</li>
+            <li><b>Data Science:</b> Statistical computing, Big Data storage and processing.</li>
+        </ul>
+    </div>
+</div>
+</div>
+<div class="bg-card-light dark:bg-card-dark p-6 rounded-xl shadow-sm">
+<h2 class="text-text-primary dark:text-white text-[22px] font-bold tracking-tight mb-4">Technologies & Concepts You'll Master 🧠</h2>
+<p class="text-text-secondary dark:text-gray-300 leading-relaxed mb-4">You won't just learn theory; you'll gain hands-on experience with industry-standard tools and platforms.</p>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div class="flex items-center gap-4">
+<div class="flex items-center justify-center size-10 rounded-lg bg-primary/20 text-primary">
+<span class="material-symbols-outlined">hub</span>
+</div>
+<span class="font-medium text-text-primary dark:text-gray-200">Artificial Intelligence & ML Libraries (e.g., TensorFlow)</span>
+</div>
+<div class="flex items-center gap-4">
+<div class="flex items-center justify-center size-10 rounded-lg bg-accent-blue/20 text-accent-blue">
+<span class="material-symbols-outlined">code_blocks</span>
+</div>
+<span class="font-medium text-text-primary dark:text-gray-200">Cloud Computing Platforms (AWS, Azure)</span>
+</div>
+<div class="flex items-center gap-4">
+<div class="flex items-center justify-center size-10 rounded-lg bg-accent-yellow/30 text-accent-yellow">
+<span class="material-symbols-outlined">security</span>
+</div>
+<span class="font-medium text-text-primary dark:text-gray-200">Network Protocols & Cryptography</span>
+</div>
+<div class="flex items-center gap-4">
+<div class="flex items-center justify-center size-10 rounded-lg bg-red-500/20 text-red-500">
+<span class="material-symbols-outlined">database</span>
+</div>
+<span class="font-medium text-text-primary dark:text-gray-200">SQL/NoSQL Database Administration</span>
+</div>
+</div>
+</div>
+<div class="bg-card-light dark:bg-card-dark p-6 rounded-xl shadow-sm">
+<h2 class="text-text-primary dark:text-white text-[22px] font-bold tracking-tight mb-4">Transferable Skills for the Future 💡</h2>
+<p class="text-text-secondary dark:text-gray-300 leading-relaxed mb-3">Beyond technical skills, this degree cultivates essential cognitive and professional abilities valued across all industries.</p>
+<div class="flex flex-wrap gap-3">
+<span class="bg-gray-100 dark:bg-gray-700 text-text-secondary dark:text-gray-300 text-sm font-medium px-4 py-2 rounded-lg">Algorithmic Problem-Solving</span>
+<span class="bg-gray-100 dark:bg-gray-700 text-text-secondary dark:text-gray-300 text-sm font-medium px-4 py-2 rounded-lg">System Architecture Design</span>
+<span class="bg-gray-100 dark:bg-gray-700 text-text-secondary dark:text-gray-300 text-sm font-medium px-4 py-2 rounded-lg">Agile & Scrum Methodologies</span>
+<span class="bg-gray-100 dark:bg-gray-700 text-text-secondary dark:text-gray-300 text-sm font-medium px-4 py-2 rounded-lg">High-Level Data Analysis</span>
+<span class="bg-gray-100 dark:bg-gray-700 text-text-secondary dark:text-gray-300 text-sm font-medium px-4 py-2 rounded-lg">Technical Communication & Documentation</span>
+<span class="bg-gray-100 dark:bg-gray-700 text-text-secondary dark:text-gray-300 text-sm font-medium px-4 py-2 rounded-lg">Critical Debugging</span>
+</div>
+</div>
+<div class="bg-card-light dark:bg-card-dark p-6 rounded-xl shadow-sm overflow-hidden">
+<h2 class="text-text-primary dark:text-white text-[22px] font-bold tracking-tight mb-4">Career Outcomes: Your Digital Footprint 🚀</h2>
+<p class="text-text-secondary dark:text-gray-300 leading-relaxed mb-4">Graduates are highly sought after globally, capable of securing roles across diverse sectors from fintech and manufacturing to healthcare and government.</p>
+<div class="flex gap-4 pb-2 -mb-2 overflow-x-auto">
+<div class="flex flex-col items-center flex-shrink-0 w-32 text-center">
+<div class="flex items-center justify-center size-16 rounded-full bg-primary/20 text-primary mb-2">
+<span class="material-symbols-outlined text-3xl">developer_mode</span>
+</div>
+<p class="text-sm font-medium text-text-secondary dark:text-gray-300">**Software Engineer** (Designing scalable applications)</p>
+</div>
+<div class="flex flex-col items-center flex-shrink-0 w-32 text-center">
+<div class="flex items-center justify-center size-16 rounded-full bg-accent-blue/20 text-accent-blue mb-2">
+<span class="material-symbols-outlined text-3xl">query_stats</span>
+</div>
+<p class="text-sm font-medium text-text-secondary dark:text-gray-300">**AI/Machine Learning Specialist** (Developing intelligent systems)</p>
+</div>
+<div class="flex flex-col items-center flex-shrink-0 w-32 text-center">
+<div class="flex items-center justify-center size-16 rounded-full bg-accent-yellow/30 text-accent-yellow mb-2">
+<span class="material-symbols-outlined text-3xl">lan</span>
+</div>
+<p class="text-sm font-medium text-text-secondary dark:text-gray-300">**Cybersecurity Analyst** (Protecting digital assets)</p>
+</div>
+<div class="flex flex-col items-center flex-shrink-0 w-32 text-center">
+<div class="flex items-center justify-center size-16 rounded-full bg-red-500/20 text-red-500 mb-2">
+<span class="material-symbols-outlined text-3xl">cloud</span>
+</div>
+<p class="text-sm font-medium text-text-secondary dark:text-gray-300">**Cloud Infrastructure Architect** (Managing cloud environments)</p>
+</div>
+<div class="flex flex-col items-center flex-shrink-0 w-32 text-center">
+<div class="flex items-center justify-center size-16 rounded-full bg-green-500/20 text-green-500 mb-2">
+<span class="material-symbols-outlined text-3xl">support_agent</span>
+</div>
+<p class="text-sm font-medium text-text-secondary dark:text-gray-300">**IT Consultant** (Strategic tech advisory)</p>
+</div>
+</div>
+</div>
+<div class="p-6 rounded-xl">
+<h2 class="text-text-primary dark:text-white text-[22px] font-bold tracking-tight mb-4">Try a Mini-Project</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="bg-card-light dark:bg-card-dark rounded-xl shadow-sm overflow-hidden flex flex-col group">
+<div class="h-40 bg-cover bg-center" data-alt="Abstract code on a screen" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDyOrrfRkGcJejKBwFKF0J4SBZmxeSCU1cmkYuj86li06TSULwJl2b96XGk7r2Lqzn3afc8tzFgvax01eKaEWjMA_gwyifhcW97pRiBYsBTn96wLNY1iUi3a5xromSYBbQel6a8f7E6nYIY6MFmVvQ0NOXFxrJ07LB6Phv_UCDm_-4uUlYxxPNplGgF7oBwVDXC1wymSzRlzgy3aUc0lDlQu-zZeEBe6H64QfJNLn3NbCGOSeErD-HkrMhcb6fPATNTc4l4pgwH')"></div>
+<div class="p-4 flex-grow">
+<h3 class="font-bold text-text-primary dark:text-white">Build a Simple App (Python)</h3>
+<p class="text-sm text-text-secondary dark:text-gray-400 mt-1">1-2 hours | Focus: Object-Oriented Programming</p>
+</div>
+<button class="w-full bg-primary/20 text-primary dark:bg-primary/30 dark:text-primary p-3 text-sm font-bold group-hover:bg-primary group-hover:text-white transition-colors">Start Project</button>
+</div>
+<div class="bg-card-light dark:bg-card-dark rounded-xl shadow-sm overflow-hidden flex flex-col group">
+<div class="h-40 bg-cover bg-center" data-alt="Charts and graphs on a laptop screen" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDdKkVkVW6StEJXh139GGZ-Yji576YON5ZXQs9obVvrhOVYvl0Qbb7V0wigHw11Sg43DDdkR_3b_ea1J430P6thq14C-kVP_2q7HMfht12bg9R9hRpMO9Uw67ooU87Zob9KZS02Y8pHURpVxDtbQVROzVyCZEoTqFYv8k1l4v-RXR6H7cm2QVky9lpsBTAOlA9sPKgBIFcbmqvh6MJNHZpwmCLKUzBaHWuXUKUKcOS0JRRJZUEPDlB4hNmVuVaLapkR_DaLC4vQ')"></div>
+<div class="p-4 flex-grow">
+<h3 class="font-bold text-text-primary dark:text-white">Analyze a Dataset (Data Science)</h3>
+<p class="text-sm text-text-secondary dark:text-gray-400 mt-1">45-60 mins | Focus: Pandas and Data Visualisation</p>
+</div>
+<button class="w-full bg-primary/20 text-primary dark:bg-primary/30 dark:text-primary p-3 text-sm font-bold group-hover:bg-primary group-hover:text-white transition-colors">Start Project</button>
+</div>
+</div>
+</div>
+<div class="p-6 rounded-xl space-y-4">
+<h2 class="text-text-primary dark:text-white text-[22px] font-bold tracking-tight mb-2">Practical Details & Entry Requirements</h2>
+
+<!--malaysian entry requirement -->
+<details class="group bg-card-light dark:bg-card-dark p-4 rounded-lg shadow-sm" open>
+<summary class="flex justify-between items-center font-medium cursor-pointer list-none">
+<span> <b>Malaysia University Entry Requirements </b> </span>
+<span class="transition group-open:rotate-180">
+<span class="material-symbols-outlined">expand_more</span>
+</span>
+</summary>
+<div class="text-text-secondary dark:text-gray-300 mt-3 group-open:animate-fadeIn">
+<p class="mb-2">Admission typically requires a strong performance in a recognised pre-university or equivalent program, with a compulsory credit in Mathematics at the SPM/O-Level level.</p>
+<ul class="list-disc list-inside ml-4 space-y-1 text-sm">
+    <li><b>STPM:</b> Minimum CGPA of 2.50 (or equivalent) with passes in 2 relevant subjects, including Mathematics.</li>
+    <li><b>A-Levels:</b> Minimum 2 Principal Passes (or equivalent 240 UCAS points) with a pass in Mathematics.</li>
+    <li><b>UEC (Unified Examination Certificate):</b> Minimum 5 subjects with B's, including Advanced Mathematics and a credit in Mathematics in the SPM/O-Level equivalent.</li>
+    <li><b>Foundation/Matriculation:</b> Minimum CGPA of 2.50 in a relevant science or engineering stream.</li>
+    <li><b>Diploma:</b> A relevant Diploma with a minimum CGPA of 2.50 may be eligible for credit transfer.</li>
+</ul>
+</div>
+</details>
+
+<!--international / overseas entry requirement -->
+<details class="group bg-card-light dark:bg-card-dark p-4 rounded-lg shadow-sm" open>
+    <summary class="flex justify-between items-center font-medium cursor-pointer list-none">
+    <span> <b> International/Overseas University Entry Requirements </b> </span>
+    <span class="transition group-open:rotate-180">
+    <span class="material-symbols-outlined">expand_more</span>
+    </span>
+    </summary>
+    <div class="text-text-secondary dark:text-gray-300 mt-3 group-open:animate-fadeIn">
+        <p class="mb-2 font-semibold text-text-primary dark:text-white">Academic Requirements:</p>
+        <ul class="list-disc list-inside ml-4 space-y-1 text-sm mb-4">
+            <li><b>GCE A-Level / IB Diploma / Equivalent : </b> Must meet the minimum grade requirements (equivalent to 2 Principal Passes) including <b>High-Level Mathematics or Computer Science</b>.</li>
+            <li><b>High School Certificate (12 Years):</b> Overall average of 70-80% (varies by country), with strong results in **Mathematics and Science/ICT**.</li>
+        </ul>
+        <p class="mb-2 font-semibold text-text-primary dark:text-white">English Language Requirements (Non-Native Speakers):</p>
+        <ul class="list-disc list-inside ml-4 space-y-1 text-sm">
+            <li><b>IELTS:</b> Minimum Band <b>5.5 to 6.0</b> (with no band score below 5.5).</li>
+            <li><b>TOEFL iBT:</b> Minimum score of <b>70 to 80. </b> </li>
+            <li><b>UET (Malaysian University English Test):</b> Minimum <b>Band 3.5 to 4</b>.</li>
+            <li>Note: Requirements are often waived if previous education was conducted entirely in English.</li>
+        </ul>
+    </div>
+    </details>
+
+<details class="group bg-card-light dark:bg-card-dark p-4 rounded-lg shadow-sm">
+<summary class="flex justify-between items-center font-medium cursor-pointer list-none">
+<span>Course Structure & Fees</span>
+<span class="transition group-open:rotate-180">
+<span class="material-symbols-outlined">expand_more</span>
+</span>
+</summary>
+<div class="text-text-secondary dark:text-gray-300 mt-3 group-open:animate-fadeIn">
+<p>This course consists of 24 units over 3 years of full-time study. Indicative fees for domestic students are approximately $11,500 per year. Please check the **course provider's website** for the most current fee information.</p>
+</div>
+</details>
+</div>
+</div>
+</div>
+<aside class="w-full lg:w-72 lg:flex-shrink-0">
+<div class="sticky top-24">
+<div class="flex h-full min-h-[400px] flex-col justify-between bg-card-light dark:bg-card-dark p-6 rounded-xl shadow-sm">
+<div class="flex flex-col gap-4">
+<div class="flex gap-4 items-center">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg size-12" data-alt="Generic course logo placeholder" style='background-image: url("Image/CS.jpg");'></div>
+<div class="flex flex-col">
+<h3 class="text-text-primary dark:text-white font-bold leading-tight">Course Overview </h3>
+<!--<p class="text-text-secondary text-sm">Course Code: CS101</p>-->
+</div>
+</div>
+<div class="flex flex-col gap-1 text-sm pt-2 border-t border-gray-200 dark:border-gray-700">
+    <p class="text-text-secondary dark:text-gray-400"><b>Duration:</b> 3 Years (Full-Time)</p>
+    <p class="text-text-secondary dark:text-gray-400"><b>Intakes:</b> February & July (Typical)</p>
+    <p class="text-text-secondary dark:text-gray-400"><b>Qualification:</b> Bachelor Degree (Level 6 MQF)</p>
+</div>
+</div>
+<div class="flex flex-col gap-4 mt-8">
+<button class="flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-4 bg-primary text-white text-base font-bold transition-transform hover:scale-105">
+<a href="projects.html"> <span class="truncate">Try a Mini-Project</span> </a>
+</button>
+<div class="flex flex-col gap-2 pt-2 border-t border-gray-200 dark:border-gray-700">
+<a class="flex items-center gap-3 px-3 py-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700/50" href="#">
+<span class="material-symbols-outlined text-text-secondary dark:text-gray-400">favorite_border</span>
+<p class="text-text-primary dark:text-gray-200 text-sm font-medium">Save to Compare</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700/50" href="#">
+<span class="material-symbols-outlined text-text-secondary dark:text-gray-400">open_in_new</span>
+<p class="text-text-primary dark:text-gray-200 text-sm font-medium">Visit Course Provider Site</p>
+</a>
+</div>
+</div>
+</div>
+</div>
+</aside>
+</div>
+</main>
+
+<footer class="mt-10 border-t border-solid border-white/10 dark:border-[#222949] px-4 sm:px-10 py-8 text-zinc-500 dark:text-gray-400 text-sm">
+    <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+        <div class="flex items-center gap-2">
+            <div class="size-5 text-primary">
+                <svg fill="currentColor" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                    <path clip-rule="evenodd" d="M24 4H42V17.3333V30.6667H24V44H6V30.6667V17.3333H24V4Z" fill="currentColor" fill-rule="evenodd"></path>
+                </svg>
+            </div>
+            <span class="font-bold text-base text-black dark:text-white">FuSure</span>
+        </div>
+        <div class="flex flex-wrap justify-center gap-x-6 gap-y-2">
+            <a class="hover:text-primary" href="#">About Us</a>
+            <a class="hover:text-primary" href="#">Contact</a>
+            <a class="hover:text-primary" href="#">Terms of Service</a>
+            <a class="hover:text-primary" href="#">Privacy Policy</a>
+        </div>
+        <p class="text-center md:text-right">© 2025 FuSure. All Rights Reserved.</p>
+    </div>
+</footer>
+</div>
+<script src="dropdown.js"></script>
+
+</body></html>
+
+
+<!--left 7 html page to do! -->
