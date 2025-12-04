@@ -1,0 +1,138 @@
+<!--another version of AI chatbox-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat with AICourseBuddy - FuSure</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="main-wrapper">
+    <div class="layout-container">
+        
+        <header class="navbar">
+            <div class="nav-brand">
+                <div class="logo-icon">
+                    <svg fill="currentColor" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                        <path clip-rule="evenodd" d="M24 4H42V17.3333V30.6667H24V44H6V30.6667V17.3333H24V4Z" fill="currentColor" fill-rule="evenodd"></path>
+                    </svg>
+                </div>
+                <h2>FuSure</h2>
+            </div>
+
+            <div class="nav-content">
+                <nav class="nav-links">
+                    <a href="#">Course Guides</a>
+                    <a href="projects.html">Explore Mini Projects</a>
+                    <a href="community.html">Community</a>
+                </nav>
+                
+                <div class="nav-actions">
+                    <a href="#" class="btn btn-primary icon-btn">
+                        <span>Chat with AICourseBuddy 🤖</span>
+                    </a>
+                    <div class="auth-buttons">
+                        <button class="btn btn-secondary">Login</button>
+                        <button class="btn btn-primary">Sign Up</button>
+                    </div>
+                </div>
+            </div>
+
+            <button class="mobile-menu-btn">
+                <span class="material-symbols-outlined">menu</span>
+            </button>
+        </header>
+
+        <main class="chat-layout">
+            <div class="chat-card">
+                
+                <div class="chat-header">
+                    <h1>Chat with AICourseBuddy</h1>
+                    <p>Let's find the perfect course for you!</p>
+                </div>
+
+                <div class="chat-messages">
+                    
+                    <div class="message-row bot-row">
+                        <div class="avatar bot-avatar">
+                            <span class="material-symbols-outlined">smart_toy</span>
+                        </div>
+                        <div class="message-bubble bot-bubble">
+                            <p class="msg-sender">AICourseBuddy</p>
+                            <p class="msg-text">Hey there! I'm your AICourseBuddy. To help you find your ideal university course, I'd like to ask a few questions. First off, what subjects did you enjoy most in high school?</p>
+                        </div>
+                    </div>
+
+                    <div class="message-row user-row">
+                        <div class="message-bubble user-bubble">
+                            <p class="msg-sender">You</p>
+                            <p class="msg-text">I really liked Math and Physics, but I was also pretty good at Art.</p>
+                        </div>
+                        <div class="avatar user-avatar">
+                            <span class="material-symbols-outlined">person</span>
+                        </div>
+                    </div>
+
+                    <div class="message-row bot-row">
+                        <div class="avatar bot-avatar">
+                            <span class="material-symbols-outlined">smart_toy</span>
+                        </div>
+                        <div class="message-bubble bot-bubble">
+                            <p class="msg-sender">AICourseBuddy</p>
+                            <p class="msg-text">That's an interesting mix! It shows you have both analytical and creative strengths. Which of these sounds more appealing to you?</p>
+                            
+                            <div class="option-buttons">
+                                <button class="btn btn-primary btn-sm">Solving complex problems</button>
+                                <button class="btn btn-secondary btn-sm">Creating visually stunning things</button>
+                                <button class="btn btn-secondary btn-sm">A bit of both!</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="chat-input-area">
+                    <div class="input-wrapper">
+                        <input type="text" placeholder="Type your message here...">
+                        <button class="send-btn">
+                            <span class="material-symbols-outlined">send</span>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+
+        <footer class="main-footer">
+            <div class="footer-content">
+                <div class="nav-brand">
+                    <div class="logo-icon">
+                        <svg fill="currentColor" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                            <path clip-rule="evenodd" d="M24 4H42V17.3333V30.6667H24V44H6V30.6667V17.3333H24V4Z" fill="currentColor" fill-rule="evenodd"></path>
+                        </svg>
+                    </div>
+                    <span class="brand-name">FuSure</span>
+                </div>
+                <div class="footer-links">
+                    <a href="#">About Us</a>
+                    <a href="#">Contact</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Privacy Policy</a>
+                </div>
+                <p class="copyright">© 2024 FuSure. All Rights Reserved.</p>
+            </div>
+        </footer>
+
+    </div>
+</div>
+<script src="chatbot.js"></script> </body>
+</body>
+</html>
