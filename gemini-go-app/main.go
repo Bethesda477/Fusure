@@ -165,21 +165,28 @@ func serveStaticFiles(w http.ResponseWriter, r *http.Request) {
 
 func main() {
 	if err := godotenv.Load(); err != nil {
-		log.Println("Warning: Could not find or load .env file. Relying on system environment variables.")
+		log.Println("No .env file found, using system env")
 	}
 
-	// NOTE: Ensure all HTML, CSS, and JS files are now directly under Mproject (not Mproject/assets).
+	port := os.Getenv("PORT")
 
-	// 1. API Endpoint
-	http.HandleFunc("/api/chat", chatHandler)
+	if port == "" {
 
-	// 2. Static File Server
-	// This handler serves the root page and all static assets from the Mproject folder.
-	http.HandleFunc("/", serveStaticFiles)
+		port = "8080"
 
-	port := "8080"
-	log.Printf("Go API and Static Server listening on port %s...", port)
+	}
+
+	// 3. Register Handlers
+
+	http.HandleFunc("/api/chat", chatHandler) // API Priority
+
+	http.HandleFunc("/", serveStaticFiles) // Frontend Fallback
+
+	log.Printf("Server starting on port %s...", port)
+
 	if err := http.ListenAndServe(":"+port, nil); err != nil {
-		log.Fatalf("Error starting server: %v", err)
+
+		log.Fatal(err)
+
 	}
 }
