@@ -595,7 +595,7 @@ enterButton.addEventListener("click", () => {
 const loader = new GLTFLoader(manager);
 
 loader.load(
-  "./Portfolio.glb",
+  "./Portfolio3.glb",
   function (glb) {
     glb.scene.traverse((child) => {
       if (intersectObjectsNames.includes(child.name)) {
