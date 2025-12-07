@@ -240,13 +240,7 @@ func analyzeHandler(w http.ResponseWriter, r *http.Request) {
 	Include some bullet points for the report.
 	Use card format for the report.
 	Use markdown format for the report.
-	Use bold for the headings.
-	Use italic for the subheadings.
-	Use bullet points for the list items.
-	Use numbered list for the list items.
-	Use link for the list items.
-	Use image for the list items.
-	Use table for the list items.
+	Bold the headings and course and career titles.
 	`
 
 	model := client.GenerativeModel(modelName)
