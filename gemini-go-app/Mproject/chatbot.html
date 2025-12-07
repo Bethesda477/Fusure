@@ -46,10 +46,28 @@
                 </div>
             </div>
 
-            <button class="mobile-menu-btn">
+            <button class="mobile-menu-btn" id="mobile-menu-toggle">
                 <span class="material-symbols-outlined">menu</span>
             </button>
         </header>
+
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobile-menu">
+            <nav class="mobile-nav-links">
+                <a href="courseChoice.html">Course Guides</a>
+                <a href="projects.html">Explore Mini Projects</a>
+                <a href="community.html">Community</a>
+            </nav>
+            <div class="mobile-nav-actions">
+                <a href="chatbot.html" class="btn btn-primary icon-btn">
+                    <span>Chat with AICourseBuddy 🤖</span>
+                </a>
+                <div class="auth-buttons">
+                    <button class="btn btn-secondary">Login</button>
+                    <button class="btn btn-primary">Sign Up</button>
+                </div>
+            </div>
+        </div>
 
         <main class="chat-layout">
             <div class="chat-card">
@@ -108,6 +126,33 @@
                     </div>
                 </div>
 
+                <!-- Progress Bar Section -->
+                <div class="progress-section">
+                    <div class="progress-info">
+                        <span class="progress-label">Chat Progress</span>
+                        <span class="progress-percentage">0%</span>
+                    </div>
+                    <div class="progress-track">
+                        <div class="progress-fill progress-chat"></div>
+                    </div>
+                    <p class="progress-hint">Continue the conversation to collect enough information for analysis</p>
+                    <button class="btn btn-primary btn-analyze" id="analyze-btn">
+                        <span class="material-symbols-outlined">psychology</span>
+                        <span>Generate Analysis Report</span>
+                    </button>
+                </div>
+
+                <!-- Analysis Report Section -->
+                <div class="analysis-report" id="analysis-report">
+                    <div class="report-header">
+                        <h2>Personal Analysis Report</h2>
+                        <p>Based on your conversation generated deep analysis</p>
+                    </div>
+                    <div class="report-content" id="report-content">
+                        <!-- Report will be generated here -->
+                    </div>
+                </div>
+
             </div>
         </main>
 
@@ -133,6 +178,6 @@
 
     </div>
 </div>
-<script src="chatbot.js"></script> </body>
+<script src="chatbot.js"></script>
 </body>
 </html>
