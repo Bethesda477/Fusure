@@ -240,7 +240,7 @@ func analyzeHandler(w http.ResponseWriter, r *http.Request) {
 	Include some bullet points for the report.
 	Use card format for the report.
 	Use markdown format for the report.
-	Bold the headings and course and career titles.
+	Bold the course and career titles********
 	`
 
 	model := client.GenerativeModel(modelName)
