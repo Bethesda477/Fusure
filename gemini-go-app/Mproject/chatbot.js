@@ -373,38 +373,6 @@ function formatTextWithLineBreaks(text) {
 // Initialize progress on page load
 updateProgress();
 
-// Mobile menu toggle
-const mobileMenuToggle = document.getElementById("mobile-menu-toggle");
-const mobileMenu = document.getElementById("mobile-menu");
-
-if (mobileMenuToggle && mobileMenu) {
-  mobileMenuToggle.addEventListener("click", () => {
-    mobileMenu.classList.toggle("active");
-    mobileMenuToggle.classList.toggle("active");
-  });
-
-  // Close menu when clicking outside
-  document.addEventListener("click", (e) => {
-    if (
-      mobileMenu.classList.contains("active") &&
-      !mobileMenu.contains(e.target) &&
-      !mobileMenuToggle.contains(e.target)
-    ) {
-      mobileMenu.classList.remove("active");
-      mobileMenuToggle.classList.remove("active");
-    }
-  });
-
-  // Close menu when clicking on a link
-  const mobileMenuLinks = mobileMenu.querySelectorAll("a");
-  mobileMenuLinks.forEach((link) => {
-    link.addEventListener("click", () => {
-      mobileMenu.classList.remove("active");
-      mobileMenuToggle.classList.remove("active");
-    });
-  });
-}
-
 // Event listeners
 if (sendButton) {
   sendButton.addEventListener("click", sendChatMessage);
