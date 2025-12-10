@@ -70,6 +70,7 @@ let character = {
   spawnPosition: new THREE.Vector3(),
 };
 let targetRotation = Math.PI / 2;
+let modelMissionUnlocked = false;
 
 const colliderOctree = new Octree();
 const playerCollider = new Capsule(
@@ -143,25 +144,26 @@ let hasUnreadTasks = false;
 
 const modalContent = {
   Project_1: {
-    title: "🍜Recipe Finder👩🏻‍🍳",
+    title: "🍜Guugle Recipe Finder👩🏻‍🍳",
     dialogue: [
       "Recipe Finder reporting for duty! I fetch meals from TheMealDB API and plate them on tidy React cards.",
       "Need inspiration? I’ll keep a warm batch ready whenever you’re hungry for UI.",
     ],
     choices: [
       {
-        label: "That sounds delicious!",
+        label: "That sounds awesome!",
         followup: [
           "Right? Clean UI and tasty data are my favorite combo.",
-          "Take a stroll around the park and imagine the recipes coming to life.",
+          "Take a stroll around the office and imagine the project coming to life.",
         ],
-        completeTaskId: "explorePark",
+        completeTaskId: "exploreTheWorkspace",
         newTask: {
-          id: "cookQuest",
-          title: "Plan your dream recipe app",
+          id: "talk with senior",
+          title: "Talk with senior developer",
           subtasks: [
-            "Imagine a recipe you’d like to build into an app.",
-            "Think about which data and UI components you would need.",
+            "Ask about the project",
+            "Ask about the technology used",
+            "Ask about the team structure",
           ],
         },
       },
@@ -174,14 +176,14 @@ const modalContent = {
     ],
   },
   Project_2: {
-    title: "📋ToDo List✏️",
+    title: "📋Guugle ToDo List✏️",
     dialogue: [
       "ToDo List at your service. Tailwind CSS keeps me tidy while React hooks juggle the tasks.",
       "Give me your chaos and I’ll stack it into clean little checkboxes.",
     ],
   },
   Project_3: {
-    title: "🌞Weather App😎",
+    title: "🌞Guugle Weather App😎",
     dialogue: [
       "Weather App sliding in! I auto-detect your location and paint the forecast in a shiny Figma-inspired UI.",
       "Sun, clouds, or cozy rain—I keep the vibe check running.",
@@ -190,36 +192,31 @@ const modalContent = {
   Chest: {
     title: "💁‍♀️ About Me",
     dialogue: [
-      "Hi! I’m Bella’s treasure chest. Crack me open to read her origin story and creative hobbies.",
+      "Hi! I’m Jenny's treasure chest. Crack me open to read her origin story and creative hobbies.",
       "Drawing, clay sculpting, Pokémon binges—she’s got plenty to chat about.",
     ],
   },
-  Picnic: {
-    title: "🍷 Uggh yesss 🧺",
-    dialogue: [
-      "Picnic basket here—grape juice in a wine glass, sunshine, max aura points.",
-      "Stretch out on the grass and vibe with me for a minute.",
-    ],
-  },
+  
   Model: {
-    title: "🧊 Model Workshop",
+    title: "🧊 Senior Guugle Developer",
     dialogue: [
-      "Welcome to the Model station! I keep Bella's meshes crisp and well-behaved.",
-      "Sometimes I switch between low-poly wireframes and painterly surfaces just for fun.",
+      "Welcome to Guugle office! I am your senior, James and I will guide you throughout your journey here.",
+      "Sometimes I will give you some tasks to complete, and you need to complete them to get the next task.",
+      "We are having a scrum meeting with our frontend team later, you need to be there to present your work.",
     ],
     choices: [
       {
-        label: "Show me the wireframes",
+        label: "I will be there.",
         followup: [
-          "Picture every vertex glowing neon blue—that's my nightly look.",
-          "Maybe one day you'll unlock free-cam mode to inspect every face.",
+          "That's great, no worry I will guide you step by step",
+          "Chill and have a office tour first",
         ],
       },
       {
-        label: "Any texturing tips?",
+        label: "I am kind of confuse on what I should do",
         followup: [
-          "Blend soft gradients with chunky highlights. It makes everything feel toy-like but polished.",
-          "Try it on your next scene and bring me screenshots!",
+          "It is okay. No worry I will guide you step by step",
+          "Chill and have a office tour first",
         ],
       },
     ],
@@ -228,25 +225,25 @@ const modalContent = {
 
 const tasks = [
   {
-    id: "explorePark",
+    id: "exploreTheWorkspace",
     completed: false,
     isNew: false,
-    title: "Explore the park",
+    title: "Explore the workspace",
     subtasks: [
-      "Talk to the Recipe Finder sign",
-      "Chat with the ToDo List sign",
-      "Visit the Weather App board",
+      "Talk to the colleagues",
+      "Interact with the billboard",
+      "Find the coffee machine",
     ],
   },
   {
-    id: "meetResidents",
+    id: "meetTheTeam",
     completed: false,
     isNew: false,
-    title: "Meet the residents",
+    title: "Meet the team",
     subtasks: [
-      "Wave at at least one Pokémon",
-      "Open Bella's treasure chest",
-      "Relax at the picnic spot",
+      "Invite the team members",
+      "Provide feedback to the team",
+      "Schedule the meeting",
     ],
   },
 ];
@@ -254,6 +251,23 @@ const tasks = [
 function showModal(id) {
   const content = modalContent[id];
   if (!content) return;
+
+  if (id === "Model" && !modelMissionUnlocked) {
+    modelMissionUnlocked = true;
+    markTaskCompleted("exploreTheWorkspace");
+    addOrUpdateTask(
+      {
+        id: "modelWorkshopQuest",
+        title: "Have a scrum meeting later",
+        subtasks: [
+          "Choose a topic for the meeting",
+          "Invite the team members",
+          "Provide feedback to the team",
+        ],
+      },
+      { markNew: true }
+    );
+  }
 
   dialogueSpeaker.textContent = content.title || id;
   currentDialogueLines =
@@ -442,6 +456,18 @@ function renderTasks() {
 
     taskList.appendChild(li);
   });
+}
+
+function removeTask(taskId) {
+  const index = tasks.findIndex((t) => t.id === taskId);
+  if (index !== -1) {
+    tasks.splice(index, 1);
+    hasUnreadTasks = tasks.some((t) => t.isNew);
+    updateTaskToggleBadge();
+    if (taskPanel && !taskPanel.classList.contains("hidden")) {
+      renderTasks();
+    }
+  }
 }
 
 function toggleTaskPanel() {
